@@ -1,0 +1,49 @@
+com.example.florist_mobileapp-jetified-window-1.0.0-beta04-0 C:\Users\A S U S\.gradle\caches\transforms-3\032f4dff274e516110d9363a9793a3e3\transformed\jetified-window-1.0.0-beta04\res
+com.example.florist_mobileapp-lifecycle-livedata-core-2.5.1-1 C:\Users\A S U S\.gradle\caches\transforms-3\08e3c1416e9dac0acae1c24bfe9ac6e9\transformed\lifecycle-livedata-core-2.5.1\res
+com.example.florist_mobileapp-jetified-window-java-1.0.0-beta04-2 C:\Users\A S U S\.gradle\caches\transforms-3\142c24f2530665bb6deb4123ab140714\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.florist_mobileapp-jetified-core-ktx-1.9.0-3 C:\Users\A S U S\.gradle\caches\transforms-3\1a558cc1337459cbec1c56acdc7fd430\transformed\jetified-core-ktx-1.9.0\res
+com.example.florist_mobileapp-lifecycle-runtime-2.5.1-4 C:\Users\A S U S\.gradle\caches\transforms-3\1a935933a7516d6e9c6665303d4a2768\transformed\lifecycle-runtime-2.5.1\res
+com.example.florist_mobileapp-coordinatorlayout-1.0.0-5 C:\Users\A S U S\.gradle\caches\transforms-3\1bdcf9ec37b83623278e4aa0058ae8c5\transformed\coordinatorlayout-1.0.0\res
+com.example.florist_mobileapp-jetified-emoji2-views-helper-1.2.0-6 C:\Users\A S U S\.gradle\caches\transforms-3\2127c3474630e29a60996120be0fab68\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.example.florist_mobileapp-fragment-1.5.7-7 C:\Users\A S U S\.gradle\caches\transforms-3\29452fca93ea4b3edc5e6f01432f2023\transformed\fragment-1.5.7\res
+com.example.florist_mobileapp-jetified-play-services-base-18.1.0-8 C:\Users\A S U S\.gradle\caches\transforms-3\4b9d22533576529904e76f8ef61c175c\transformed\jetified-play-services-base-18.1.0\res
+com.example.florist_mobileapp-lifecycle-viewmodel-2.5.1-9 C:\Users\A S U S\.gradle\caches\transforms-3\53f06a3afe9c4ae74e89cf13d2d15784\transformed\lifecycle-viewmodel-2.5.1\res
+com.example.florist_mobileapp-jetified-facebook-login-17.0.0-10 C:\Users\A S U S\.gradle\caches\transforms-3\638ccb96281ff4585f94f47bbf4727ec\transformed\jetified-facebook-login-17.0.0\res
+com.example.florist_mobileapp-media-1.0.0-11 C:\Users\A S U S\.gradle\caches\transforms-3\6a48f7a3729f658358de6b117bd27054\transformed\media-1.0.0\res
+com.example.florist_mobileapp-jetified-appcompat-resources-1.6.1-12 C:\Users\A S U S\.gradle\caches\transforms-3\6f6ab2739702ad57be5e1c749dda57d4\transformed\jetified-appcompat-resources-1.6.1\res
+com.example.florist_mobileapp-jetified-activity-1.6.0-13 C:\Users\A S U S\.gradle\caches\transforms-3\71988b2f2284ecbba3dac5889beb0cd4\transformed\jetified-activity-1.6.0\res
+com.example.florist_mobileapp-core-1.9.0-14 C:\Users\A S U S\.gradle\caches\transforms-3\75f115a0f1013408c24b813aa08b99f3\transformed\core-1.9.0\res
+com.example.florist_mobileapp-jetified-facebook-common-17.0.0-15 C:\Users\A S U S\.gradle\caches\transforms-3\88f853b055a8dc494956f912acf5f8cf\transformed\jetified-facebook-common-17.0.0\res
+com.example.florist_mobileapp-jetified-firebase-common-20.4.3-16 C:\Users\A S U S\.gradle\caches\transforms-3\8d4ee856b0501bd4e2deb987ae70e355\transformed\jetified-firebase-common-20.4.3\res
+com.example.florist_mobileapp-browser-1.4.0-17 C:\Users\A S U S\.gradle\caches\transforms-3\9186a72439cdfe13d23082d88530cc56\transformed\browser-1.4.0\res
+com.example.florist_mobileapp-jetified-savedstate-1.2.0-18 C:\Users\A S U S\.gradle\caches\transforms-3\93b2fe162feeddf86c57cc9f9fbf694c\transformed\jetified-savedstate-1.2.0\res
+com.example.florist_mobileapp-jetified-emoji2-1.2.0-19 C:\Users\A S U S\.gradle\caches\transforms-3\98f8115e8f56ec67d96e5a388c46890f\transformed\jetified-emoji2-1.2.0\res
+com.example.florist_mobileapp-appcompat-1.6.1-20 C:\Users\A S U S\.gradle\caches\transforms-3\9cb2897c440f756ddc400d89a1ad071d\transformed\appcompat-1.6.1\res
+com.example.florist_mobileapp-jetified-play-services-auth-21.0.0-21 C:\Users\A S U S\.gradle\caches\transforms-3\a1cb5f9282e217f7e2ac7dbaa94bb3d3\transformed\jetified-play-services-auth-21.0.0\res
+com.example.florist_mobileapp-jetified-lifecycle-process-2.4.1-22 C:\Users\A S U S\.gradle\caches\transforms-3\ad7c0a20bbe18e7cdd98dd28f81a36c8\transformed\jetified-lifecycle-process-2.4.1\res
+com.example.florist_mobileapp-jetified-annotation-experimental-1.3.0-23 C:\Users\A S U S\.gradle\caches\transforms-3\ae329bc8a0eb87982c4fe41e3ec5da7f\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.florist_mobileapp-jetified-play-services-basement-18.3.0-24 C:\Users\A S U S\.gradle\caches\transforms-3\c3e05c9fbf3e6c63974105ad6d97e1f5\transformed\jetified-play-services-basement-18.3.0\res
+com.example.florist_mobileapp-jetified-lifecycle-viewmodel-savedstate-2.5.1-25 C:\Users\A S U S\.gradle\caches\transforms-3\c716edde0156fdb489470c2308bd437c\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.example.florist_mobileapp-jetified-facebook-share-4.42.0-26 C:\Users\A S U S\.gradle\caches\transforms-3\d0cfde6bb2728cae33ad98435c1a9b70\transformed\jetified-facebook-share-4.42.0\res
+com.example.florist_mobileapp-jetified-security-crypto-1.1.0-alpha06-27 C:\Users\A S U S\.gradle\caches\transforms-3\d683ef7a3c9fe7e8f41f14fc2909f336\transformed\jetified-security-crypto-1.1.0-alpha06\res
+com.example.florist_mobileapp-cardview-1.0.0-28 C:\Users\A S U S\.gradle\caches\transforms-3\d9da5155600720598049711def8f09d5\transformed\cardview-1.0.0\res
+com.example.florist_mobileapp-jetified-startup-runtime-1.1.1-29 C:\Users\A S U S\.gradle\caches\transforms-3\f5fcd9d21efbf86a0ac70e1d2cc111ed\transformed\jetified-startup-runtime-1.1.1\res
+com.example.florist_mobileapp-jetified-facebook-messenger-4.42.0-30 C:\Users\A S U S\.gradle\caches\transforms-3\fbb76149fabaabb0e68eb03ea7dcc7bd\transformed\jetified-facebook-messenger-4.42.0\res
+com.example.florist_mobileapp-debug-31 D:\Tai lieu\florist_mobileapp\android\app\src\debug\res
+com.example.florist_mobileapp-main-32 D:\Tai lieu\florist_mobileapp\android\app\src\main\res
+com.example.florist_mobileapp-RES-33 D:\Tai lieu\florist_mobileapp\build\app\RES\processDebugGoogleServices
+com.example.florist_mobileapp-pngs-34 D:\Tai lieu\florist_mobileapp\build\app\generated\res\pngs\debug
+com.example.florist_mobileapp-resValues-35 D:\Tai lieu\florist_mobileapp\build\app\generated\res\resValues\debug
+com.example.florist_mobileapp-rs-36 D:\Tai lieu\florist_mobileapp\build\app\generated\res\rs\debug
+com.example.florist_mobileapp-mergeDebugResources-37 D:\Tai lieu\florist_mobileapp\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.florist_mobileapp-mergeDebugResources-38 D:\Tai lieu\florist_mobileapp\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.florist_mobileapp-merged_res-39 D:\Tai lieu\florist_mobileapp\build\app\intermediates\merged_res\debug
+com.example.florist_mobileapp-packaged_res-40 D:\Tai lieu\florist_mobileapp\build\cloud_firestore\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-41 D:\Tai lieu\florist_mobileapp\build\firebase_auth\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-42 D:\Tai lieu\florist_mobileapp\build\firebase_core\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-43 D:\Tai lieu\florist_mobileapp\build\firebase_database\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-44 D:\Tai lieu\florist_mobileapp\build\flutter_email_sender\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-45 D:\Tai lieu\florist_mobileapp\build\flutter_facebook_auth\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-46 D:\Tai lieu\florist_mobileapp\build\flutter_secure_storage\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-47 D:\Tai lieu\florist_mobileapp\build\google_sign_in_android\intermediates\packaged_res\debug
+com.example.florist_mobileapp-packaged_res-48 D:\Tai lieu\florist_mobileapp\build\path_provider_android\intermediates\packaged_res\debug

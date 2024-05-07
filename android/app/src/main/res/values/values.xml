@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    // name: 'FloristMobile',-->
+<!--    // options: const FirebaseOptions(-->
+<!--    //   appId: 'floristmobile-303a5',-->
+<!--    //   apiKey: 'AIzaSyCdh0_z0Q_e9w1K5Aa5QA7nug6TlqI2wZ8',-->
+<!--    //   messagingSenderId: '666104796538',-->
+<!--    //   projectId: '1:666104796538:android:613b93ca98d8ca96ddb2c3',-->
+<!--    //   authDomain: '1:666104796538:android:613b93ca98d8ca96ddb2c3.firebaseapp.com',-->
+<!--    //   databaseURL: 'https://1:666104796538:android:613b93ca98d8ca96ddb2c3.firebaseio.com',-->
+<!--    //   storageBucket: '1:666104796538:android:613b93ca98d8ca96ddb2c3.appspot.com',-->
+<!--    // ),-->
+    <string name="google_app_id">1:666104796538:android:613b93ca98d8ca96ddb2c3</string>
+    <string name="project_id">floristmobile-303a5</string>
+    <string name="firebase_database_url">https://floristmobile-303a5.firebaseio.com</string>
+    <string name="gcm_defaultSenderId">666104796538</string>
+    <string name="google_api_key">AIzaSyCdh0_z0Q_e9w1K5Aa5QA7nug6TlqI2wZ8</string>
+</resources>

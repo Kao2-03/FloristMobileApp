@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "666104796538",
+    "firebase_url": "https://floristmobile-303a5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "floristmobile-303a5",
+    "storage_bucket": "floristmobile-303a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666104796538:android:613b93ca98d8ca96ddb2c3",
+        "android_client_info": {
+          "package_name": "com.example.florist_mobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666104796538-oq6qcqfr8tu40na39jelb3kp6i2had6u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.florist_mobileapp",
+            "certificate_hash": "02fa6a27af984ad22e8fd9af2922f1b5577b334b"
+          }
+        },
+        {
+          "client_id": "666104796538-pb2vlgq88qclcbft2bfi19ia9mhhdlis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy4mwtJkxPB5Lm14hfy7cxXRvgmhSytNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666104796538-pb2vlgq88qclcbft2bfi19ia9mhhdlis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
