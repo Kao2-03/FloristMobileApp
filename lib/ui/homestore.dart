@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeStore extends StatefulWidget {
-  const HomeStore({Key? key}) : super(key: key);
+  const HomeStore({super.key});
 
   @override
   State<HomeStore> createState() => _HomeState();
@@ -12,9 +12,9 @@ class _HomeState extends State<HomeStore> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

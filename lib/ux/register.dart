@@ -3,7 +3,7 @@ import '../constants.dart';
 import 'signin_handle.dart';
 
 class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+  const Register({super.key});
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -43,14 +43,14 @@ class _RegisterState extends State<Register> {
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
-                  title: Text("Thông báo"),
+                  title: const Text("Thông báo"),
                   content: Text("Đăng ký không thành công: $error"),
                   actions: [
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text("OK"),
+                      child: const Text("OK"),
                     ),
                   ],
                 ),
@@ -73,14 +73,14 @@ class _RegisterState extends State<Register> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Thông báo"),
-          content: Text("Vui lòng điền đầy đủ thông tin"),
+          title: const Text("Thông báo"),
+          content: const Text("Vui lòng điền đầy đủ thông tin"),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("OK"),
+              child: const Text("OK"),
             ),
           ],
         ),
@@ -129,7 +129,7 @@ class _RegisterState extends State<Register> {
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: 'Tên người dùng',
                 hintText: 'Nhập tên người dùng',
                 errorText: !_usernameValid ? 'Vui lòng nhập tên người dùng' : null,
@@ -145,7 +145,7 @@ class _RegisterState extends State<Register> {
               controller: _passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: 'Mật khẩu',
                 hintText: 'Nhập lại mật khẩu',
                 errorText: !_passwordValid ? 'Mật khẩu phải có ít nhất 8 kí tự và chứa chữ và số.' : null,
@@ -161,7 +161,7 @@ class _RegisterState extends State<Register> {
               controller: _confirmPasswordController,
               obscureText: true,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: 'Xác nhận mật khẩu',
                 hintText: 'Xác nhận mật khẩu',
                 errorText: !_confirmPasswordValid ? 'Vui lòng xác nhận mật khẩu' : null,
@@ -176,7 +176,7 @@ class _RegisterState extends State<Register> {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: 'Nhập email',
                 hintText: 'Nhập email',
                 errorText: !_emailValid ? 'Vui lòng nhập email' : null,
@@ -191,17 +191,17 @@ class _RegisterState extends State<Register> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: 200,
                   child: ElevatedButton(
                     onPressed: register,
-                    child: const Text(
-                      'Đăng ký',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(Constants.primaryColor),
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(15)),
+                    ),
+                    child: const Text(
+                      'Đăng ký',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
                 ),

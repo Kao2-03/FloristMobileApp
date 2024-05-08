@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../ux/reset_password.dart';
 
 class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key});
+  const ForgotPassword({super.key, Key? key});
 
   @override
   State<ForgotPassword> createState() => _ForgotPasswordState();
@@ -40,15 +40,15 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 20.0),
-            Icon(
+            const Icon(
               FontAwesomeIcons.lock,
               size: 100,
               color: Colors.yellow,
             ),
             const SizedBox(height: 20.0),
-            Text(
+            const Text(
               'Nhập địa chỉ email của bạn:',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
               ),

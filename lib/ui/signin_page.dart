@@ -7,7 +7,7 @@ import 'homestore.dart';
 import '../ux/signin_handle.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+  const SignIn({super.key});
 
   @override
   _SignInState createState() => _SignInState();
@@ -70,7 +70,7 @@ class _SignInState extends State<SignIn> {
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: 'Tên người dùng',
                 hintText: 'Nhập tên người dùng',
                 errorText: !_usernameValid ? 'Vui lòng nhập tên người dùng' : null,
@@ -86,7 +86,7 @@ class _SignInState extends State<SignIn> {
               controller: _passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: 'Mật khẩu',
                 hintText: 'Nhập mật khẩu',
                 errorText: !_passwordValid ? 'Vui lòng nhập mật khẩu' : null,
@@ -114,7 +114,7 @@ class _SignInState extends State<SignIn> {
                     fontSize: 16.0,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 GestureDetector(
                   onTap: () {
                     // Chuyển đến trang Quên mật khẩu
@@ -134,7 +134,7 @@ class _SignInState extends State<SignIn> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: 200, // Độ rộng của nút
                   child: ElevatedButton(
                     onPressed: () {
@@ -147,52 +147,52 @@ class _SignInState extends State<SignIn> {
                         showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
-                            title: Text("Thông báo"),
-                            content: Text("Vui lòng nhập đầy đủ tên người dùng và mật khẩu"),
+                            title: const Text("Thông báo"),
+                            content: const Text("Vui lòng nhập đầy đủ tên người dùng và mật khẩu"),
                             actions: [
                               TextButton(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text("OK"),
+                                child: const Text("OK"),
                               ),
                             ],
                           ),
                         );
                       }
                     },
-                    child: const Text(
-                      'Đăng nhập',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Constants.primaryColor),
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                           const EdgeInsets.all(15)),
                     ),
+                    child: const Text(
+                      'Đăng nhập',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 20.0),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: const Divider(color: Colors.grey),
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Divider(color: Colors.grey),
                   ),
                 ),
                 Text(
                   'Hoặc đăng nhập bằng',
-                  style: const TextStyle(fontSize: 16.0, color: Colors.grey),
+                  style: TextStyle(fontSize: 16.0, color: Colors.grey),
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: const Divider(color: Colors.grey),
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Divider(color: Colors.grey),
                   ),
                 ),
               ],
@@ -296,14 +296,14 @@ class _SignInState extends State<SignIn> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Error"),
-          content: Text("Failed to sign in with email and password"),
+          title: const Text("Error"),
+          content: const Text("Failed to sign in with email and password"),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("OK"),
+              child: const Text("OK"),
             ),
           ],
         ),
@@ -324,14 +324,14 @@ class _SignInState extends State<SignIn> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Error"),
-          content: Text("Đăng nhập bằng Google thất bại"),
+          title: const Text("Error"),
+          content: const Text("Đăng nhập bằng Google thất bại"),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("OK"),
+              child: const Text("OK"),
             ),
           ],
         ),
@@ -352,14 +352,14 @@ class _SignInState extends State<SignIn> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Error"),
-          content: Text("Đăng nhập bằng Facebook thất bại"),
+          title: const Text("Error"),
+          content: const Text("Đăng nhập bằng Facebook thất bại"),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("OK"),
+              child: const Text("OK"),
             ),
           ],
         ),
