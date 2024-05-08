@@ -16,7 +16,7 @@ class AuthService {
       return userCredential.user;
     } catch (error) {
       print('Error signing in with email and password: $error');
-      throw error;
+      rethrow;
     }
   }
 
@@ -27,7 +27,7 @@ class AuthService {
       return userCredential.user;
     } catch (error) {
       print('Error registering with email and password: $error');
-      throw error;
+      rethrow;
     }
   }
 
@@ -38,7 +38,7 @@ class AuthService {
       return providers.isNotEmpty;
     } catch (error) {
       print('Error checking if email is already used: $error');
-      throw error;
+      rethrow;
     }
   }
 
@@ -72,7 +72,7 @@ class AuthService {
       }
     } catch (error) {
       print('Google sign in failed: $error'); // In ra lỗi khi đăng nhập thất bại
-      throw error;
+      rethrow;
     }
   }
   // Đăng nhập bằng Facebook
@@ -87,7 +87,7 @@ class AuthService {
       return user;
     } catch (error) {
       print('Facebook sign in failed: $error');
-      throw error;
+      rethrow;
     }
   }
 
@@ -97,12 +97,12 @@ class AuthService {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Đăng nhập thành công'),
-          content: Text('Bạn đã đăng nhập thành công.'),
+          title: const Text('Đăng nhập thành công'),
+          content: const Text('Bạn đã đăng nhập thành công.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Đóng'),
+              child: const Text('Đóng'),
             ),
           ],
         );
@@ -116,12 +116,12 @@ class AuthService {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Đăng ký thành công'),
-          content: Text('Bạn đã đăng ký thành công.'),
+          title: const Text('Đăng ký thành công'),
+          content: const Text('Bạn đã đăng ký thành công.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Đóng'),
+              child: const Text('Đóng'),
             ),
           ],
         );

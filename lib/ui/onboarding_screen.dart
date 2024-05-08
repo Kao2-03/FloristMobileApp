@@ -1,13 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import '../constants.dart';
 import 'signin_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+  const OnboardingScreen({super.key});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -21,8 +20,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void initState() {
     super.initState();
     // Chuyển đến trang đăng nhập sau 300 giây
-    SchedulerBinding.instance?.addPostFrameCallback((_) {
-      Timer(Duration(seconds: 300), () {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      Timer(const Duration(seconds: 300), () {
         _navigateToLogin();
       });
     });
@@ -61,16 +60,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Constants.primaryColor,
+                  ),
                   child: IconButton(
                     onPressed: () {
                       _navigateToLogin();
                     },
                     icon: const Icon(Icons.arrow_forward_ios, size: 24, color: Colors.white),
-                  ),
-                  padding: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Constants.primaryColor,
                   ),
                 ),
                 const SizedBox(height: 10), // Khoảng cách giữa nút mũi tên và chữ "Skip"
@@ -106,11 +105,11 @@ class createPage extends StatelessWidget {
   final String title;
   final String description;
   const createPage({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

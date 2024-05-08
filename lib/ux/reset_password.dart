@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class ResetPassword extends StatefulWidget {
   final String email;
 
-  const ResetPassword({Key? key, required this.email}) : super(key: key);
+  const ResetPassword({super.key, required this.email});
 
   @override
   State<ResetPassword> createState() => _ResetPasswordState();
@@ -39,15 +39,15 @@ class _ResetPasswordState extends State<ResetPassword> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 20.0),
-            Icon(
+            const Icon(
               FontAwesomeIcons.lock,
               size: 100,
               color: Colors.yellow,
             ),
             const SizedBox(height: 20.0),
-            Text(
+            const Text(
               'Nhập mật khẩu mới:',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
               ),
