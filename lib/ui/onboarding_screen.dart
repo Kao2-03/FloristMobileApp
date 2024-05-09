@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -19,9 +20,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   void initState() {
     super.initState();
-    // Chuyển đến trang đăng nhập sau 300 giây
+    // Chuyển đến trang đăng nhập sau 60 giây
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      Timer(const Duration(seconds: 300), () {
+      Timer(const Duration(seconds: 60), () {
         _navigateToLogin();
       });
     });
@@ -49,7 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               createPage(
                 image: 'assets/images/pic3.jpg',
                 title: Constants.titleOne,
-                description: Constants.descriptionOne,
+                description:Constants.descriptionOne,
               ),
             ],
           ),
@@ -72,7 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     icon: const Icon(Icons.arrow_forward_ios, size: 24, color: Colors.white),
                   ),
                 ),
-                const SizedBox(height: 10), // Khoảng cách giữa nút mũi tên và chữ "Skip"
+                const SizedBox(height: 20), // Khoảng cách giữa nút mũi tên và chữ "Skip"
                 InkWell(
                   onTap: () {
                     _navigateToLogin();
@@ -82,7 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     style: TextStyle(
                       fontSize: 20.0,
                       color: Colors.grey,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
                 ),

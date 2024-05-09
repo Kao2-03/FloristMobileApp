@@ -1,13 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../constants.dart';
-import '../ux/register.dart';
+import '../ux/auth_service.dart';
+import 'package:florist_mobileapp/ui/register_form.dart';
 import 'ForgotPassword.dart';
 import 'homestore.dart';
-import '../ux/signin_handle.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+  const SignIn({Key? key}) : super(key: key);
 
   @override
   _SignInState createState() => _SignInState();
@@ -27,43 +29,56 @@ class _SignInState extends State<SignIn> {
   void initState() {
     super.initState();
     _authService = AuthService(); // Khởi tạo AuthService
+    _checkRememberMe();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Đăng Nhập'), // Đổi tiêu đề
-        backgroundColor: Constants.primaryColor,
-      ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(50.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20.0),
             Text(
-              Constants.titleTwo, // Tiêu đề
-              style: const TextStyle(
-                fontSize: 24.0,
+              Constants.titleTwo,
+              style:  TextStyle(
+                fontSize: 70.0,
                 fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.left, // Căn trái
-            ),
-            const SizedBox(height: 20.0),
-            Text(
-              Constants.descriptionTwo, // Mô tả
-              style: const TextStyle(
-                fontSize: 16.0,
-                color: Colors.grey,
+                color: Constants.primaryColor,
               ),
               textAlign: TextAlign.left, // Căn trái
             ),
             const SizedBox(height: 20.0),
             Row(
+              children: [
+                Text(
+                  Constants.titleThree,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.basicColor,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+                Text(
+                  Constants.titleFour,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.kemColor,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 20.0),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.shopping_cart, size: 50, color: Constants.primaryColor), // Icon giỏ hàng
+                Icon(Icons.shopping_bag_outlined, size: 50, color: Constants.primaryColor), // Icon giỏ hàng
               ],
             ),
             const SizedBox(height: 20.0),
@@ -71,9 +86,9 @@ class _SignInState extends State<SignIn> {
               controller: _usernameController,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                labelText: 'Tên người dùng',
-                hintText: 'Nhập tên người dùng',
-                errorText: !_usernameValid ? 'Vui lòng nhập tên người dùng' : null,
+                labelText: 'Email',
+                hintText: 'Nhập email',
+                errorText: !_usernameValid ? 'Vui lòng nhập email' : null,
               ),
               onChanged: (value) {
                 setState(() {
@@ -137,35 +152,17 @@ class _SignInState extends State<SignIn> {
                 SizedBox(
                   width: 200, // Độ rộng của nút
                   child: ElevatedButton(
-                    onPressed: () {
-                      // Kiểm tra xem username và password có được nhập hay không
+                    onPressed: () async {
                       if (_usernameValid && _passwordValid) {
-                        // Nếu đã nhập đủ thông tin, thực hiện chuyển đến trang Trang chủ
-                        _signInWithEmailAndPassword(_usernameController.text, _passwordController.text);
+                        // Nếu đã nhập đủ thông tin, thực hiện đăng nhập
+                        await _signInWithEmailAndPassword(_usernameController.text, _passwordController.text);
                       } else {
-                        // Nếu username hoặc password chưa được nhập, hiển thị thông báo
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: const Text("Thông báo"),
-                            content: const Text("Vui lòng nhập đầy đủ tên người dùng và mật khẩu"),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text("OK"),
-                              ),
-                            ],
-                          ),
-                        );
+                        _showAlertDialog("Thông báo", "Vui lòng nhập đầy đủ email và mật khẩu");
                       }
                     },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          Constants.primaryColor),
-                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                          const EdgeInsets.all(15)),
+                      backgroundColor: MaterialStateProperty.all<Color>(Constants.primaryColor),
+                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(15)),
                     ),
                     child: const Text(
                       'Đăng nhập',
@@ -251,7 +248,7 @@ class _SignInState extends State<SignIn> {
                     // Chuyển đến trang Đăng ký
                     _navigateToRegister(context);
                   },
-                  icon: const Icon(Icons.person_add),
+                  icon: const Icon(Icons.person_add,color: Colors.black,),
                   label: const Text(
                     'Tạo tài khoản',
                     style: TextStyle(
@@ -259,9 +256,11 @@ class _SignInState extends State<SignIn> {
                       color: Colors.grey,
                     ),
                   ),
+
                 ),
               ],
             ),
+
           ],
         ),
       ),
@@ -280,62 +279,66 @@ class _SignInState extends State<SignIn> {
 
   // Hàm để chuyển đến trang Đăng ký
   void _navigateToRegister(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => const Register()));
+    Navigator.push(context, MaterialPageRoute(builder: (_) => const RegisterForm()));
   }
 
-  // Hàm xử lý đăng nhập với email và mật khẩu
-  void _signInWithEmailAndPassword(String email, String password) async {
+  // Hàm đăng nhập bằng email và password
+  Future<void> _signInWithEmailAndPassword(String email, String password) async {
     try {
-      // Gọi hàm signInWithEmailAndPassword từ AuthService
+      // Thực hiện đăng nhập bằng email và password từ AuthService
       final userCredential = await _authService.signInWithEmailAndPassword(email, password);
-      // Nếu đăng nhập thành công, chuyển đến trang Home
-      _navigateToHome(context);
+
+      if (userCredential != null) {
+        // Hiển thị popup thông báo đăng nhập thành công
+        _showAlertDialog("Success", "Đăng nhập thành công");
+        // Nếu đăng nhập thành công, chuyển đến trang Home
+        _navigateToHome(context);
+
+        // Lưu thông tin tài khoản nếu người dùng chọn "Ghi nhớ tài khoản"
+        if (_rememberMe) {
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          await prefs.setBool('rememberMe', true);
+          await prefs.setString('username', email);
+          await prefs.setString('password', password);
+        }
+      } else {
+        // Hiển thị popup thông báo đăng nhập thất bại
+        _showAlertDialog("Error", "Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
+      }
+    } on FirebaseAuthException catch (e) {
+      // Xử lý lỗi FirebaseAuthException
+      String errorMessage = "Đăng nhập thất bại. ";
+      if (e.code == 'user-not-found') {
+        errorMessage += "Người dùng không tồn tại.";
+      } else if (e.code == 'wrong-password') {
+        errorMessage += "Sai mật khẩu.";
+      } else {
+        errorMessage += "Lỗi không xác định: ${e.message}";
+      }
+      _showAlertDialog("Error", errorMessage);
     } catch (e) {
-      // Xử lý lỗi
-      print("Error signing in with email and password: $e");
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text("Error"),
-          content: const Text("Failed to sign in with email and password"),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text("OK"),
-            ),
-          ],
-        ),
-      );
+      // Xử lý lỗi khác
+      print("Lỗi đăng nhập: $e");
+      _showAlertDialog("Error", "Đăng nhập thất bại\nLỗi đăng nhập: $e");
     }
   }
 
-  // Hàm xử lý đăng nhập bằng Google
+  // Hàm đăng nhập bằng Google
   void _signInWithGoogle() async {
     try {
       // Gọi hàm signInWithGoogle từ AuthService
       final userCredential = await _authService.signInWithGoogle();
+
+      // Hiển thị popup thông báo đăng nhập thành công
+      _showAlertDialog("Success", "Đăng nhập thành công");
+
       // Nếu đăng nhập thành công, chuyển đến trang Home
       _navigateToHome(context);
     } catch (e) {
       // Xử lý lỗi
       print("Lỗi đăng nhập bằng Google: $e");
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text("Error"),
-          content: const Text("Đăng nhập bằng Google thất bại"),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text("OK"),
-            ),
-          ],
-        ),
-      );
+      // Hiển thị popup thông báo lỗi
+      _showAlertDialog("Error", "Đăng nhập bằng Google thất bại\nLỗi đăng nhập: $e");
     }
   }
 
@@ -344,26 +347,55 @@ class _SignInState extends State<SignIn> {
     try {
       // Gọi hàm signInWithFacebook từ AuthService
       final userCredential = await _authService.signInWithFacebook();
+
+      // Hiển thị popup thông báo đăng nhập thành công
+      _showAlertDialog("Success", "Đăng nhập thành công");
+
       // Nếu đăng nhập thành công, chuyển đến trang Home
       _navigateToHome(context);
     } catch (e) {
       // Xử lý lỗi
       print("Lỗi đăng nhập bằng Facebook: $e");
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text("Error"),
-          content: const Text("Đăng nhập bằng Facebook thất bại"),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text("OK"),
-            ),
-          ],
-        ),
-      );
+      // Hiển thị popup thông báo lỗi
+      _showAlertDialog("Error", "Đăng nhập bằng Facebook thất bại\nLỗi đăng nhập: $e");
     }
+  }
+
+  // Hàm kiểm tra trạng thái "Ghi nhớ tài khoản" từ SharedPreferences
+  void _checkRememberMe() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool rememberMe = prefs.getBool('rememberMe') ?? false;
+    if (rememberMe) {
+      String? savedUsername = prefs.getString('username');
+      String? savedPassword = prefs.getString('password');
+      if (savedUsername != null && savedPassword != null) {
+        setState(() {
+          _usernameController.text = savedUsername;
+          _passwordController.text = savedPassword;
+          _usernameValid = true;
+          _passwordValid = true;
+          _rememberMe = true;
+        });
+      }
+    }
+  }
+
+  // Hàm hiển thị hộp thoại cảnh báo
+  void _showAlertDialog(String title, String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text("OK"),
+          ),
+        ],
+      ),
+    );
   }
 }
