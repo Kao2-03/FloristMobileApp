@@ -1,3 +1,4 @@
+import 'package:florist_mobileapp/pages/profile/user_account.dart';
 import 'package:flutter/material.dart';
 
 class HomeStore extends StatefulWidget {
@@ -38,7 +39,13 @@ class _HomeState extends State<HomeStore> {
                     padding:
                         MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Điều hướng đến màn hình mới khi người dùng nhấn vào nút
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => UserPage()),
+                    );
+                  },
                   child: Text(
                     'Profile',
                     style: TextStyle(color: Colors.red),
