@@ -4,7 +4,7 @@
             "outputFile": "com.example.florist_mobileapp-mergeDebugResources-36:/values-pt/values-pt.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\A S U S\\.gradle\\caches\\transforms-3\\75f115a0f1013408c24b813aa08b99f3\\transformed\\core-1.9.0\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\84348\\.gradle\\caches\\transforms-3\\75f115a0f1013408c24b813aa08b99f3\\transformed\\core-1.9.0\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\A S U S\\.gradle\\caches\\transforms-3\\9186a72439cdfe13d23082d88530cc56\\transformed\\browser-1.4.0\\res\\values-pt\\values-pt.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,170,269,381",
-                        "endColumns": "114,98,111,105",
-                        "endOffsets": "165,264,376,482"
-                    },
-                    "to": {
-                        "startLines": "52,53,54,55",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "5373,5488,5587,5699",
-                        "endColumns": "114,98,111,105",
-                        "endOffsets": "5483,5582,5694,5800"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\A S U S\\.gradle\\caches\\transforms-3\\9cb2897c440f756ddc400d89a1ad071d\\transformed\\appcompat-1.6.1\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\84348\\.gradle\\caches\\transforms-3\\9cb2897c440f756ddc400d89a1ad071d\\transformed\\appcompat-1.6.1\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\A S U S\\.gradle\\caches\\transforms-3\\638ccb96281ff4585f94f47bbf4727ec\\transformed\\jetified-facebook-login-17.0.0\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\84348\\.gradle\\caches\\transforms-3\\638ccb96281ff4585f94f47bbf4727ec\\transformed\\jetified-facebook-login-17.0.0\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -69,6 +52,23 @@
                         "startOffsets": "2843,3000,3125,3264,3375,3458,3545,3623,3714,3803,3919,4028,4116,4204,4302,4423,4505,4594,4790,4884,4986,5101,5206",
                         "endColumns": "156,124,138,110,82,86,77,90,88,115,108,87,87,97,120,81,88,195,93,101,114,104,166",
                         "endOffsets": "2995,3120,3259,3370,3453,3540,3618,3709,3798,3914,4023,4111,4199,4297,4418,4500,4589,4785,4879,4981,5096,5201,5368"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\84348\\.gradle\\caches\\transforms-3\\9186a72439cdfe13d23082d88530cc56\\transformed\\browser-1.4.0\\res\\values-pt\\values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,170,269,381",
+                        "endColumns": "114,98,111,105",
+                        "endOffsets": "165,264,376,482"
+                    },
+                    "to": {
+                        "startLines": "52,53,54,55",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5373,5488,5587,5699",
+                        "endColumns": "114,98,111,105",
+                        "endOffsets": "5483,5582,5694,5800"
                     }
                 }
             ]
