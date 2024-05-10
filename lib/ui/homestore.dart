@@ -14,7 +14,7 @@ class _HomeState extends State<HomeStore> {
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -25,7 +25,25 @@ class _HomeState extends State<HomeStore> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-        
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextButton(
+                  style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all<Size>(Size(150, 60)),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Color(0xFFF5F6F9)),
+                    padding:
+                        MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    'Profile',
+                    style: TextStyle(color: Colors.red),
+                  )),
+            ),
           ],
         ),
       ),
