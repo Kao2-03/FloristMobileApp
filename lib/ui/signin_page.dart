@@ -62,6 +62,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   textAlign: TextAlign.left,
                 ),
+                SizedBox(width: 8),
                 Text(
                   Constants.titleFour,
                   style: TextStyle(
@@ -74,14 +75,14 @@ class _SignInState extends State<SignIn> {
               ],
             ),
 
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 50.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.shopping_bag_outlined, size: 50, color: Constants.primaryColor), // Icon giỏ hàng
+                Icon(Icons.shopping_bag_outlined, size: 70, color: Constants.basicColor), // Icon giỏ hàng
               ],
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 50.0),
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(

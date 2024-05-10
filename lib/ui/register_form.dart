@@ -1,3 +1,4 @@
+import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../ux/register.dart';
@@ -65,8 +66,11 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Đăng ký'),
+      ),
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,20 +78,45 @@ class _RegisterFormState extends State<RegisterForm> {
             const SizedBox(height: 20.0),
             Text(
               Constants.titleTwo,
-              style: const TextStyle(
-                fontSize: 24.0,
+              style:  TextStyle(
+                fontSize: 70.0,
                 fontWeight: FontWeight.bold,
+                color: Constants.primaryColor,
               ),
               textAlign: TextAlign.left,
             ),
             const SizedBox(height: 20.0),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.shopping_bag_outlined, size: 60, color: Constants.primaryColor),
+                Text(
+                  Constants.titleThree,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.basicColor,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+                SizedBox(width: 8),
+                Text(
+                  Constants.titleFour,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.kemColor,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
               ],
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 50.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.shopping_bag_outlined, size: 70, color: Constants.basicColor),
+              ],
+            ),
+            const SizedBox(height: 50.0),
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(

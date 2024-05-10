@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../constants.dart';
+
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
 
@@ -73,7 +75,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 // Gửi yêu cầu cập nhật mật khẩu
                 _resetPassword(_emailController.text);
               },
-              child: Text('Gửi yêu cầu'),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Constants.primaryColor),
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(15)),
+              ),
+              child: Text('Gửi yêu cầu',
+                  style: TextStyle(color: Colors.white, fontSize: 20)),
             ),
           ],
         ),
