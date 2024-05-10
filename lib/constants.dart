@@ -9,4 +9,5 @@ class Constants{
   static var titleTwo = "Xin chào ";
   static var titleThree = "cả nhà yêu của";
   static var titleFour = "Kem";
+  static var titleFive = "Florist";
 }

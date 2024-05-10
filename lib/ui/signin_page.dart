@@ -5,7 +5,7 @@ import '../constants.dart';
 import '../ux/auth_service.dart';
 import 'package:florist_mobileapp/ui/register_form.dart';
 import 'ForgotPassword.dart';
-import 'homestore.dart';
+import 'Homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
@@ -62,6 +62,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   textAlign: TextAlign.left,
                 ),
+                SizedBox(width: 8),
                 Text(
                   Constants.titleFour,
                   style: TextStyle(
@@ -74,14 +75,14 @@ class _SignInState extends State<SignIn> {
               ],
             ),
 
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 50.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.shopping_bag_outlined, size: 50, color: Constants.primaryColor), // Icon giỏ hàng
+                Icon(Icons.shopping_bag_outlined, size: 70, color: Constants.basicColor), // Icon giỏ hàng
               ],
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 50.0),
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(
@@ -274,7 +275,7 @@ class _SignInState extends State<SignIn> {
 
   // Hàm để chuyển đến trang Trang chủ
   void _navigateToHome(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => const HomeStore()));
+    Navigator.push(context, MaterialPageRoute(builder: (_) => const HomePage()));
   }
 
   // Hàm để chuyển đến trang Đăng ký
