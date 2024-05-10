@@ -5,7 +5,7 @@ import '../constants.dart';
 import '../ux/auth_service.dart';
 import 'package:florist_mobileapp/ui/register_form.dart';
 import 'ForgotPassword.dart';
-import 'homestore.dart';
+import 'Homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
@@ -275,7 +275,7 @@ class _SignInState extends State<SignIn> {
 
   // Hàm để chuyển đến trang Trang chủ
   void _navigateToHome(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => const HomeStore()));
+    Navigator.push(context, MaterialPageRoute(builder: (_) => const HomePage()));
   }
 
   // Hàm để chuyển đến trang Đăng ký
