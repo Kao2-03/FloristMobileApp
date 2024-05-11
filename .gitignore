@@ -1,0 +1,11 @@
+# Ignore these directory
+build/
+node_modules/
+.flutter-plugins-dependencies
+.flutter-plugins
+
+
+
+
+# Not ignore these directory/files by using ! prefix
+!node_modules/.package-lock.json
