@@ -3,10 +3,6 @@ import 'package:florist_mobileapp/pages/myOrder/my_order.dart';
 =======
 import 'package:florist_mobileapp/pages/profile/components/CartPage.dart';
 import 'package:florist_mobileapp/pages/profile/components/SearchPage.dart';
-<<<<<<< HEAD
->>>>>>> 03ccaa92e871dbaf920c400d0aafb3d871aa054d
-=======
->>>>>>> 03ccaa92e871dbaf920c400d0aafb3d871aa054d
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'package:florist_mobileapp/pages/profile/user_account.dart';
@@ -281,3 +277,10 @@ void navigateToSearchPage(BuildContext context) {
 >>>>>>> 03ccaa92e871dbaf920c400d0aafb3d871aa054d
 =======
 >>>>>>> 03ccaa92e871dbaf920c400d0aafb3d871aa054d
+void navigateToSearchPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SearchPage()),
+    );
+}
