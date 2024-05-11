@@ -1,3 +1,7 @@
+import 'package:florist_mobileapp/pages/myOrder/my_order.dart';
+import 'package:florist_mobileapp/pages/profile/components/CartPage.dart';
+import 'package:florist_mobileapp/pages/profile/components/SearchPage.dart';
+
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'package:florist_mobileapp/pages/profile/user_account.dart';
@@ -6,7 +10,6 @@ import 'ProductDetail.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
   @override
-
   _HomePageState createState() => _HomePageState();
 }
 
@@ -18,10 +21,16 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _selectedIndex = index;
     });
-    if (index == 3) { // Assuming index 3 is 'Profile'
+    if (index == 3) {
+      // Assuming index 3 is 'Profile'
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => UserPage()),
+      );
+    } else if (index == 2) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MyOrder()),
       );
     }
   }
@@ -32,8 +41,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        
-        title: Text(Constants.titleFive, style: TextStyle(color: Constants.primaryColor)),
+        title: Text(Constants.titleFive,
+            style: TextStyle(color: Constants.primaryColor)),
         actions: [
           IconButton(
             icon: Icon(Icons.shopping_cart, color: Constants.basicColor),
@@ -48,23 +57,41 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: EdgeInsets.all(16.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Tìm kiếm",
-                  fillColor: Colors.grey[200],
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide.none,
+              padding: EdgeInsets.all(16),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigate to the SearchPage when the search bar is tapped
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  prefixIcon: Icon(Icons.search, color: Constants.basicColor),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Tìm kiếm",
+                      fillColor: Colors.grey[200],
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      prefixIcon:
+                          Icon(Icons.search, color: Constants.basicColor),
+                    ),
+                  ),
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text("Danh mục", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              child: Text("Danh mục",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -88,8 +115,10 @@ class _HomePageState extends State<HomePage> {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               children: <Widget>[
-                _ProductCard(productName: "Combo hoa phấn", productPrice: "125.000"),
-                _ProductCard(productName: "Combo gì sẵn", productPrice: "48.000"),
+                _ProductCard(
+                    productName: "Combo hoa phấn", productPrice: "125.000"),
+                _ProductCard(
+                    productName: "Combo gì sẵn", productPrice: "48.000"),
                 _ProductCard(productName: "Tulip", productPrice: "400.000"),
               ],
             )
@@ -99,9 +128,12 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorite'),
-          BottomNavigationBarItem(icon: Icon(Icons.reorder_rounded), label: 'My order'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Profile'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite), label: 'Favorite'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.reorder_rounded), label: 'My order'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), label: 'Profile'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Constants.primaryColor,
@@ -128,6 +160,7 @@ class _CategoryCard extends StatelessWidget {
     );
   }
 }
+
 class CreateYourOwnBouquet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -136,7 +169,8 @@ class CreateYourOwnBouquet extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         image: DecorationImage(
-          image: AssetImage("assets/images/flower1.jpg"), // Background image asset
+          image:
+              AssetImage("assets/images/flower1.jpg"), // Background image asset
           fit: BoxFit.cover,
         ),
       ),
@@ -154,11 +188,14 @@ class CreateYourOwnBouquet extends StatelessWidget {
     );
   }
 }
+
 class _ProductCard extends StatelessWidget {
   final String productName;
   final String productPrice;
 
-  const _ProductCard({Key? key, required this.productName, required this.productPrice}) : super(key: key);
+  const _ProductCard(
+      {Key? key, required this.productName, required this.productPrice})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -174,14 +211,13 @@ class _ProductCard extends StatelessWidget {
                   onTap: () {
                     navigateToProductDetail(
                       context,
-                      productName,                    
-                     'những bông hoa này tỏa ra vẻ thanh khiết và duyên dáng, những cánh hoa tinh khôi của chúng mở ra trong những đường cong nhẹ nhàng và phát ra một hương thơm ngọt nhẹ, tinh tế.', // Add your product description
-                     productPrice,
+                      productName,
+                      'những bông hoa này tỏa ra vẻ thanh khiết và duyên dáng, những cánh hoa tinh khôi của chúng mở ra trong những đường cong nhẹ nhàng và phát ra một hương thơm ngọt nhẹ, tinh tế.', // Add your product description
+                      productPrice,
                     );
                   },
-                  
-                  child: Image.asset("assets/images/flower2.jpg", fit: BoxFit.cover),
-                  
+                  child: Image.asset("assets/images/flower2.jpg",
+                      fit: BoxFit.cover),
                 ),
               ),
               Padding(
@@ -189,8 +225,10 @@ class _ProductCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(productName, style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text(productPrice, style: TextStyle(color: Constants.primaryColor)),
+                    Text(productName,
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text(productPrice,
+                        style: TextStyle(color: Constants.primaryColor)),
                   ],
                 ),
               ),
@@ -211,7 +249,9 @@ class _ProductCard extends StatelessWidget {
     );
   }
 }
-void navigateToProductDetail(BuildContext context, String productName, String productPrice, String productDescription) {
+
+void navigateToProductDetail(BuildContext context, String productName,
+    String productPrice, String productDescription) {
   Navigator.push(
     context,
     MaterialPageRoute(
@@ -224,3 +264,9 @@ void navigateToProductDetail(BuildContext context, String productName, String pr
   );
 }
 
+void navigateToSearchPage(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => SearchPage()),
+  );
+}

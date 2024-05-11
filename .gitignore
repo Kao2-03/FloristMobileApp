@@ -1,11 +1,10 @@
-# Ignore these directory
-build/
-node_modules/
-.flutter-plugins-dependencies
-.flutter-plugins
+/.dart_tool/
+.idea/
+/build/
+/.vscode/
 
-
-
-
-# Not ignore these directory/files by using ! prefix
-!node_modules/.package-lock.json
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.packages
+/ios/Podfile
+/pubspec.lock
