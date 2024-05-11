@@ -11,8 +11,10 @@ class Body extends StatelessWidget {
     'panel 2',
     'panel 3',
     'panel 4',
-    'panel 4',
-    'panel 4'
+    'panel 5',
+    'panel 6',
+    'panel 7'
+
   ];
 
   @override
