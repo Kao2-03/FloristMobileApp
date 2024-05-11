@@ -1,11 +1,10 @@
-.dart_tool/package_config_subset
-.dart_tool/package_config.json
-.dart_tool/flutter
+/.dart_tool/
+.idea/
+/build/
+/.vscode/
 
-build/
-
-
-
-
-.flutter-plugins
-.flutter-plugins-dependencies
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.packages
+/ios/Podfile
+/pubspec.lock
