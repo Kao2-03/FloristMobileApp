@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import 'package:florist_mobileapp/pages/myOrder/my_order.dart';
+=======
+import 'package:florist_mobileapp/pages/profile/components/CartPage.dart';
+import 'package:florist_mobileapp/pages/profile/components/SearchPage.dart';
+>>>>>>> 03ccaa92e871dbaf920c400d0aafb3d871aa054d
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'package:florist_mobileapp/pages/profile/user_account.dart';
@@ -54,7 +59,21 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16),
+               child: GestureDetector(
+                onTap: () {
+                  // Navigate to the SearchPage when the search bar is tapped
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                  );
+                },
+                 child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(8),
+                  ),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "Tìm kiếm",
@@ -67,6 +86,8 @@ class _HomePageState extends State<HomePage> {
                   prefixIcon: Icon(Icons.search, color: Constants.basicColor),
                 ),
               ),
+            ),
+            ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -243,3 +264,14 @@ void navigateToProductDetail(BuildContext context, String productName,
     ),
   );
 }
+<<<<<<< HEAD
+=======
+
+void navigateToSearchPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SearchPage()),
+    );
+}
+>>>>>>> 03ccaa92e871dbaf920c400d0aafb3d871aa054d
