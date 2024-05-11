@@ -1,3 +1,4 @@
+import 'package:florist_mobileapp/pages/profile/components/CartPage.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'package:florist_mobileapp/pages/profile/user_account.dart';
@@ -39,6 +40,10 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.shopping_cart, color: Constants.basicColor),
             onPressed: () {
               // Add your shopping cart functionality here
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CartPage()),
+              );
             },
           ),
         ],
